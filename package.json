@@ -1,0 +1,47 @@
+{
+  "name": "chatbot-conversation-pane",
+  "description": "",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "tom@tomkp.com",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:demo": "cross-env webpack --config webpack.config.dev.js",
+    "demo:publish": "npm run build:demo && surge demo pointbreak-chatbot.surge.sh",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "normalize.css": "^4.2.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "cross-env": "^2.0.0",
+    "css-loader": "^0.23.1",
+    "express": "^4.14.0",
+    "live-server": "^1.0.0",
+    "postcss": "^5.1.0",
+    "postcss-color-function": "^2.0.1",
+    "postcss-loader": "^0.9.1",
+    "precss": "^1.4.0",
+    "react-addons-test-utils": "^15.2.1",
+    "rimraf": "^2.5.3",
+    "style-loader": "^0.13.1",
+    "surge": "^0.18.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.12.1"
+  }
+}

@@ -1,0 +1,14 @@
+
+.Avatar {
+  vertical-align: top;
+  margin: 0 1rem;
+  display: inline-block;
+
+  .avatar-image {
+    background: #fff;
+    border-radius: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: cover;
+  }
+}

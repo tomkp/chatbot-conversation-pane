@@ -1,0 +1,72 @@
+$input-background: #fff;
+$output-background: #fff;
+
+
+.Message {
+
+  margin: 1rem 1rem 0 1rem;
+
+  .inner {
+    display: inline-block;
+    padding: .5rem 1rem;
+    background: transparent;
+    border-radius: .5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    max-width: 66%;
+
+    &:after, &:before {
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    &:before {
+      border-color: rgba(136, 183, 213, 0);
+      border-width: .5rem;
+      margin-top: -.5rem;
+    }
+
+    &.loaded {
+      background: #fff;
+    }
+  }
+
+  &.output {
+    margin-left: 1rem;
+    text-align: left;
+
+    .inner {
+      margin-right: 25%;
+      background: $output-background;
+    }
+
+    .inner:after, .inner:before {
+      right: 100%
+    }
+    .inner:before {
+      border-right-color: $output-background;
+    }
+  }
+
+  &.input {
+    margin-right: 1rem;
+    text-align: right;
+
+    .inner {
+      margin-left: 25%;
+      background: $input-background;
+    }
+
+    .inner:after, .inner:before {
+      left: 100%
+    }
+    .inner:before {
+      border-left-color: $input-background;
+    }
+  }
+}
+
