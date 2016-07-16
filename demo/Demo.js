@@ -5,12 +5,10 @@ import './demo.scss';
 
 import Conversation from '../src/conversation/Conversation'
 
-const outputAvatar = 'https://avatars3.githubusercontent.com/u/171331?v=3&s=460';
-const inputAvatar = 'https://c1.staticflickr.com/9/8512/8370573660_5802630929_n.jpg';
 
 
-const bodhi = 'http://ia.media-imdb.com/images/M/MV5BMTM2NzA5Njk1OF5BMl5BanBnXkFtZTYwMzkyOTY3._V1_UX100_CR0,0,100,100_AL_.jpg';
-const utah = 'http://ia.media-imdb.com/images/M/MV5BMTgwNjkwOTI4NF5BMl5BanBnXkFtZTYwNTkyOTY3._V1_UX100_CR0,0,100,100_AL_.jpg';
+const bodhi = 'http://pointbreak-chatbot.surge.sh/bodhi.jpg';
+const utah = 'http://pointbreak-chatbot.surge.sh/keanu.jpg';
 const pointBreak = [
     {output: true, message: "I'm not armed.", avatar: utah},
     {output: false, message: "But, you're not alone.", avatar: bodhi},
