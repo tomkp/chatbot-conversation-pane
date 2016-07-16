@@ -13,7 +13,7 @@ $output-background: #fff;
     border-radius: .5rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
-    max-width: 60%;
+    max-width: 66%;
 
     &:after, &:before {
       top: 50%;
@@ -40,7 +40,7 @@ $output-background: #fff;
     text-align: left;
 
     .inner {
-      margin-right: 20%;
+      //margin-right: 8%;
       background: $output-background;
     }
 
@@ -57,7 +57,7 @@ $output-background: #fff;
     text-align: right;
 
     .inner {
-      margin-left: 20%;
+      //margin-left: 8%;
       background: $input-background;
     }
 
