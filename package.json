@@ -10,7 +10,7 @@
     "start": "node server.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build:demo": "cross-env webpack --config webpack.config.dev.js",
-    "demo:publish": "npm run build:demo && surge demo pointbreak-chatbot.surge.sh",
+    "deploy": "npm run build:demo && surge demo pointbreak-chatbot.surge.sh",
     "prepublish": "npm run build"
   },
   "dependencies": {
