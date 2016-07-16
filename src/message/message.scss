@@ -9,11 +9,13 @@ $output-background: #fff;
   .inner {
     display: inline-block;
     padding: .5rem 1rem;
-    background: transparent;
+    background: #fff;
     border-radius: .5rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease;
     max-width: 66%;
+    opacity: 0;
+    transition: opacity .4s ease;
+
 
     &:after, &:before {
       top: 50%;
@@ -31,7 +33,7 @@ $output-background: #fff;
     }
 
     &.loaded {
-      background: #fff;
+      opacity: 1;
     }
   }
 

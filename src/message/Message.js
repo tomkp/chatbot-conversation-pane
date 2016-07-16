@@ -16,7 +16,7 @@ class Message extends Component{
     componentDidMount() {
         setTimeout(() => {
             this.setState({loaded: true})
-        }, 10)
+        }, 100)
     }
 
     render() {
