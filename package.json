@@ -5,6 +5,22 @@
   "keywords": [],
   "author": "tom@tomkp.com",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomkp/chatbot-conversation-pane"
+  },
+  "bugs": {
+    "url": "https://github.com/tomkp/chatbot-conversation-pane"
+  },
+  "homepage": "https://github.com/tomkp/chatbot-conversation-pane",
+  "keywords": [
+    "react",
+    "react-component",
+    "chatbot",
+    "pointbreak",
+    "chat-bot",
+    "chatbot-conversation-pane"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "start": "node server.js",
