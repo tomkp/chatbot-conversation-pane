@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 
-import './demo.scss';
+import '../demo.scss';
 
 import Conversation from '../src/conversation/Conversation'
 
 
 
-const bodhi = 'http://pointbreak-chatbot.surge.sh/bodhi.jpg';
-const utah = 'http://pointbreak-chatbot.surge.sh/keanu.jpg';
+const bodhi = 'http://pointbreak-chatbot.surge.sh/pointbreak/bodhi.jpg';
+const utah = 'http://pointbreak-chatbot.surge.sh/pointbreak/keanu.jpg';
 const pointBreak = [
     {output: true, message: "I'm not armed.", avatar: utah},
     {output: false, message: "But, you're not alone.", avatar: bodhi},

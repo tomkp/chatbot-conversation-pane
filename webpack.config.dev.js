@@ -6,7 +6,7 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
         'webpack-hot-middleware/client',
-        './demo/Demo.js'
+        './demo/pointbreak/Demo.js'
     ],
     output: {
         path: path.join(__dirname, 'demo'),
