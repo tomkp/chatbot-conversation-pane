@@ -5,7 +5,7 @@ const webpack = require('webpack');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        './demo/pointbreak/Demo.js'
+        './demo/Demo.js'
     ],
     output: {
         path: path.join(__dirname, 'demo'),
