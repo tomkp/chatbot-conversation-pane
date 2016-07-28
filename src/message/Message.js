@@ -16,7 +16,7 @@ class Message extends Component{
     componentDidMount() {
         setTimeout(() => {
             this.setState({loaded: true})
-        }, 100)
+        }, 100);
     }
 
     render() {
@@ -29,8 +29,8 @@ class Message extends Component{
                     <Avatar url={message.avatar} />
                 }
 
-                <div className={`inner ${this.state.loaded?'loaded':''}`}>
-                    <div className="data">{message.message}</div>
+                <div className={`inner ${this.state.loaded?'loaded':''} ${message.className}`}>
+                    <div className={`data`}>{message.message}</div>
                 </div>
 
                 {message.avatar && !message.output &&

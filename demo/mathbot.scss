@@ -1,0 +1,48 @@
+@import "../node_modules/normalize.css/normalize.css";
+@import "./flexbox.scss";
+@import "./html.scss";
+@import "./colours.scss";
+@import "./mixins.scss";
+
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+.application {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  //max-width: 600px;
+  //font-size: 2rem;
+}
+
+.Answer {
+
+  width: 100%;
+
+
+  input {
+    display: block;
+    width: 100%;
+    height: 6rem;
+    font-size: 2rem;
+    resize: none;
+
+    padding: 1rem 5rem;
+    border: none;
+    outline: none;
+  }
+
+}
+
+.correct {
+  color: forestgreen;
+}
+
+.incorrect {
+  color: tomato;
+}
+
+
