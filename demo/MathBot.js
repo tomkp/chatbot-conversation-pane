@@ -12,8 +12,8 @@ const tom = 'tom.jpg';
 const alice = 'alice.png';
 const jacob = 'jacob.png';
 
-const out = tom;
-const inx= alice;
+const requester = tom;
+const responder = alice;
 
 const questions = [
     [100, 1, '+'],
@@ -65,49 +65,25 @@ class Application extends Component {
         const message = `${questions[0][0]} ${questions[0][2]} ${questions[0][1]} = `;
 
         this.state = {
-            // chat: [
-            // ],
             chat: [
-                {output: true, message: "Hi!", avatar: out},
-                {output: true, message: "Lets do MATHS QUIZ!", avatar: out},
-                {output: true, message: message, avatar: out}
+                {output: true, message: "Hi!", avatar: requester},
+                {output: true, message: "Lets do MATHS QUIZ!", avatar: requester},
+                {output: true, message: message, avatar: requester}
             ],
             questionIndex: 0,
             wait: true
         };
-        //this.addMessage = this.addMessage.bind(this);
         this.onEnter = this.onEnter.bind(this);
-    }
-
-
-
-    fetchQuestion(index) {
-        const data = questions[index];
-        return `${data[0]} ${data[2]} ${data[1]} = `;
     }
 
     check(data, value) {
         let expected;
-
-        //const data = this.props.data;
         if (data) {
             if (data[2] === '+') {
                 expected = data[0] + data[1];
             } else {
                 expected = data[0] - data[1];
             }
-            /*if (value) {
-                const correct = expected === +value;
-                this.setState({
-                    status: correct ? 'correct' : 'incorrect'
-                });
-            } else {
-                this.setState({
-                    status: ''
-                });
-            }*/
-
-            console.log(`${value && expected === +value} ${value} ${expected}`)
             if (value && expected === +value) {
                 return true;
             }
@@ -116,15 +92,7 @@ class Application extends Component {
     }
 
     onEnter(value) {
-        console.log(`on enter ${value}`);
-        //this.addMessage({output: false, message: value, avatar: bodhi});
-        //validate answer
-
-        // if correct - congratulate
-        // and show next question
-
         const correct = this.check(questions[this.state.questionIndex], value);
-
         const nextQuestion = questions[this.state.questionIndex + 1];
         const message = `${nextQuestion[0]} ${nextQuestion[2]} ${nextQuestion[1]} = `;
 
@@ -132,10 +100,8 @@ class Application extends Component {
             this.setState({
                 chat: [
                     ...this.state.chat,
-                    {output: false, message: value, avatar: inx, className: 'correct'},
-                    //{output: true, message: 'Well done! Let\'s try another...', avatar: out},
-                    {output: true, message: message, avatar: out},
-
+                    {output: false, message: value, avatar: responder, className: 'correct'},
+                    {output: true, message: message, avatar: requester},
                 ],
                 questionIndex: this.state.questionIndex + 1
             });
@@ -144,15 +110,11 @@ class Application extends Component {
             this.setState({
                 chat: [
                     ...this.state.chat,
-                    {output: false, message: value, avatar: inx, className: 'incorrect'}
-                    //{output: true, message: 'Wrong! Try again...', avatar: bodhi}
-                ],
-                //questionIndex: this.state.questionIndex + 1
+                    {output: false, message: value, avatar: responder, className: 'incorrect'}
+                ]
             });
 
         }
-
-
     }
 
     render() {
