@@ -66,7 +66,6 @@ class Application extends Component {
 
         this.state = {
             chat: [
-                {output: true, message: "Hi!", avatar: requester},
                 {output: true, message: "Lets do MATHS QUIZ!", avatar: requester},
                 {output: true, message: message, avatar: requester}
             ],
