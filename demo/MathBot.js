@@ -99,27 +99,29 @@ class Application extends Component {
     onEnter(value) {
         const correct = this.check(questions[this.state.questionIndex], value);
         const nextQuestion = questions[this.state.questionIndex + 1];
-        const message = `${nextQuestion[0]} ${nextQuestion[2]} ${nextQuestion[1]} = `;
+        if (nextQuestion) {
 
-        if (correct) {
-            this.setState({
-                chat: [
-                    ...this.state.chat,
-                    {output: false, message: value, avatar: responder, className: 'correct'},
-                    {output: true, message: message, avatar: requester},
-                ],
-                questionIndex: this.state.questionIndex + 1,
-                score: this.state.score + 1
-            });
+            const message = `${nextQuestion[0]} ${nextQuestion[2]} ${nextQuestion[1]} = `;
 
-        } else {
-            this.setState({
-                chat: [
-                    ...this.state.chat,
-                    {output: false, message: value, avatar: responder, className: 'incorrect'}
-                ]
-            });
+            if (correct) {
+                this.setState({
+                    chat: [
+                        ...this.state.chat,
+                        {output: false, message: value, avatar: responder, className: 'correct'},
+                        {output: true, message: message, avatar: requester},
+                    ],
+                    questionIndex: this.state.questionIndex + 1,
+                    score: this.state.score + 1
+                });
 
+            } else {
+                this.setState({
+                    chat: [
+                        ...this.state.chat,
+                        {output: false, message: value, avatar: responder, className: 'incorrect'}
+                    ]
+                });
+            }
         }
     }
 
@@ -127,7 +129,7 @@ class Application extends Component {
         const {chat, score} = this.state;
         return (
             <div className="application">
-                <Score score={score} />
+                <Score score={score}/>
                 <Conversation chat={chat}/>
                 <Answer onEnter={this.onEnter}/>
             </div>
