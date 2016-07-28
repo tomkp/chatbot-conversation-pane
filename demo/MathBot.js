@@ -6,8 +6,8 @@ import './mathbot.scss';
 import Conversation from '../src/conversation/Conversation'
 
 
-const bodhi = 'http://pointbreak-chatbot.surge.sh/bodhi.jpg';
-const keanu = 'http://pointbreak-chatbot.surge.sh/keanu.jpg';
+const bodhi = 'bodhi.jpg';
+const keanu = 'keanu.jpg';
 const tom = 'tom.jpg';
 const alice = 'alice.png';
 const jacob = 'jacob.png';
@@ -43,10 +43,18 @@ const questions = [
 ];
 
 
-const Answer = ({active, onEnter}) => {
+const Score = ({score}) => {
+    return (
+        <div className="Score">
+            <div className="value">{score}</div>
+        </div>
+    )
+};
+
+const Answer = ({onEnter}) => {
     return (
         <div className="Answer">
-            <input type="number" readOnly={!active} onKeyUp={(e) => {
+            <input type="number" onKeyUp={(e) => {
                 const value = e.target.value;
                 if (e.keyCode === 13 && value.trim().length > 0) {
                     onEnter(value.trim());
@@ -61,16 +69,14 @@ class Application extends Component {
 
     constructor(props) {
         super(props);
-
         const message = `${questions[0][0]} ${questions[0][2]} ${questions[0][1]} = `;
-
         this.state = {
             chat: [
                 {output: true, message: "Lets do MATHS QUIZ!", avatar: requester},
                 {output: true, message: message, avatar: requester}
             ],
             questionIndex: 0,
-            wait: true
+            score: 0
         };
         this.onEnter = this.onEnter.bind(this);
     }
@@ -102,7 +108,8 @@ class Application extends Component {
                     {output: false, message: value, avatar: responder, className: 'correct'},
                     {output: true, message: message, avatar: requester},
                 ],
-                questionIndex: this.state.questionIndex + 1
+                questionIndex: this.state.questionIndex + 1,
+                score: this.state.score + 1
             });
 
         } else {
@@ -117,11 +124,12 @@ class Application extends Component {
     }
 
     render() {
-        const {chat} = this.state;
+        const {chat, score} = this.state;
         return (
             <div className="application">
+                <Score score={score} />
                 <Conversation chat={chat}/>
-                <Answer active={this.state.wait} onEnter={this.onEnter}/>
+                <Answer onEnter={this.onEnter}/>
             </div>
         );
     }
