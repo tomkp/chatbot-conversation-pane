@@ -6,11 +6,11 @@ import './mathbot.scss';
 import Conversation from '../src/conversation/Conversation'
 
 
-const bodhi = 'bodhi.jpg';
-const keanu = 'keanu.jpg';
-const tom = 'tom.jpg';
-const alice = 'alice.png';
-const jacob = 'jacob.png';
+const bodhi = 'static/bodhi.jpg';
+const keanu = 'static/keanu.jpg';
+const tom = 'static/tom.jpg';
+const alice = 'static/alice.png';
+const jacob = 'static/jacob.png';
 
 const requester = tom;
 const responder = alice;
