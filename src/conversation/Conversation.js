@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import './conversation.scss';
 
 import Message from '../message/Message';
-import ScrollToBottom from '../scroll-to-bottom/ScrollToBottom';
+import ScrollToBottom from 'scroll-to-bottom';
 
 class Conversation extends Component{
 
